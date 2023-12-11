@@ -1,26 +1,9 @@
-import { useEffect, useState } from 'react'
-import './App.css'
-import { api } from './api/api'
+import { Home } from './pages';
 
-export default () => {
-  const [users, setUsers] = useState([])
+import './index.css';
 
-  useEffect(() => {
-    getUsers()
-  }, [])
+const App = () => {
+	return <Home />;
+};
 
-
-  const getUsers = async () => {
-    const { data } = await api.get('user/findAll');
-    setUsers(data.users)
-  }
-
-  return (
-    <h1>
-      {
-        JSON.stringify(users)
-      }
-    </h1>
-  )
-}
-
+export default App;
